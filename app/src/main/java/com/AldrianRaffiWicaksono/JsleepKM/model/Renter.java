@@ -2,9 +2,6 @@ package com.AldrianRaffiWicaksono.JsleepKM.model;
 
 import com.AldrianRaffiWicaksono.JsleepKM.model.Serializable;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * A child class from Serializable.
  * use to store user's personal contact data
@@ -19,7 +16,7 @@ public class Renter extends Serializable
     public String address = "";
     public String username;
 
-    public static final String REGEX_NAME = "^[A-Z]{1}\\w{4,20}$";
-    public static final String REGEX_PHONE = "^\\d{9,12}$";
-
+    public Renter(int id) {
+        super(id);
+    }
 }

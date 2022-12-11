@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/dark_grey"
+    android:layout_height="match_parent"
+    tools:context=".CreatePaymentActivity"
+    android:padding="20dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/backPaymentInvoie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_arrow_left"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/createpayment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Invoice"
+            android:fontFamily="@font/Urbanist_Bold"
+            android:textColor="@color/white"
+            android:layout_marginStart="20dp"
+            android:textSize="25dp"
+            app:layout_constraintStart_toEndOf="@id/backPaymentInvoie"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="20dp"
+            android:id="@+id/createpayment_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/rounded_lvitem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/createpayment_title">
+
+            <ImageView
+                android:id="@+id/createpayment_title_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/icon_hotel_listview"
+                />
+
+            <TextView
+                android:id="@+id/createpayment_title_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hotel Melati"
+                android:fontFamily="@font/Urbanist_Bold"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/createpayment_title_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:id="@+id/createpayment_title_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jl. Haji Kodja"
+                android:textSize="15sp"
+                android:fontFamily="@font/Urbanist_Regular"
+                android:textColor="@color/green_icon"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toEndOf="@+id/createpayment_title_icon"
+                app:layout_constraintTop_toBottomOf="@+id/createpayment_title_name"
+
+                />
+            <View
+                android:layout_marginVertical="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/rounded_button"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:padding="20dp"
+            android:background="@drawable/rounded_lvitem"
+            android:layout_height="450dp"
+            app:layout_constraintTop_toBottomOf="@id/createpayment_title_layout">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check In"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/createpayment_from"
+                    android:fontFamily="@font/Urbanist_Regular"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="From"
+                    android:textSize="14sp"
+                    />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check Out"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/createpayment_to"
+                    android:fontFamily="@font/Urbanist_Regular"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To"
+                    android:textSize="14sp"
+                    />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Price"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    />
+                <TextView
+                    android:id="@+id/createpayment_price"
+                    android:fontFamily="@font/Urbanist_Regular"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Price"
+                    android:textSize="14sp"
+                    />
+
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/createpayment_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/Urbanist_Bold"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_button"
+                android:textAllCaps="false"
+                android:text="Create Payment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

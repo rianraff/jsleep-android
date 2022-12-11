@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_color"
+    tools:context=".DetailRoomActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail_imagelayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+
+            android:layout_width="270dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="30dp"
+
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_hotel_listview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="61dp" />
+
+        <ImageView
+            android:id="@+id/backDetailRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_arrow_left"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="300dp"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_imagelayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="40dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:id="@+id/detail_titlelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/roomNameVar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Hotel Mulia"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="38sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:drawableStart="@drawable/icon_star"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="5dp"
+                    android:text="4.9"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/detail_City"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_titlelayout">
+
+                <TextView
+                    android:id="@+id/roomCityVar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/Urbanist_SemiBold"
+                    android:text="Jakarta Pusat"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/detail_addresslayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_City">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_mappin" />
+
+                <TextView
+                    android:id="@+id/roomAddressVar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/Urbanist_SemiBold"
+                    android:text="Jl. BintaroJalan Asia Afrika Senayan, RT.1/RW.3, Gelora"
+                    android:textColor="@color/biru_ganteng" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/detail_sizelayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_addresslayout">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_size" />
+
+                <TextView
+                    android:id="@+id/roomSizeVar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/Urbanist_SemiBold"
+                    android:text="500 m"
+                    android:textColor="@color/biru_ganteng" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/detail_Bedlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@id/detail_sizelayout"
+                app:layout_constraintTop_toBottomOf="@id/detail_addresslayout">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_doublebed" />
+
+                <TextView
+                    android:id="@+id/roomBedTypeVar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/Urbanist_SemiBold"
+                    android:text="KING"
+                    android:textColor="@color/biru_ganteng" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/roomPriceVar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="22dp"
+                android:fontFamily="@font/Urbanist_Bold"
+                android:text="Rp200.000"
+                android:textColor="@color/green_button"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/detailBooknowButton"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/detail_descriptionfacilitytext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/Urbanist_Bold"
+                android:text="Facility"
+                android:textColor="@color/biru_ganteng"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_sizelayout" />
+
+            <LinearLayout
+                android:id="@+id/linFac1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_descriptionfacilitytext">
+
+                <RadioButton
+                    android:id="@+id/ac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="AC"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/refrigerator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Refrigerator"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Wi-Fi"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lineFac2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="left"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linFac1">
+
+                <RadioButton
+                    android:id="@+id/bathub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Bathtub"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/balcony"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Balcony"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/restaurant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Restaurant"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="left"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lineFac2">
+
+                <RadioButton
+                    android:id="@+id/pool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Swimming Pool"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/fitness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Fitness Center"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="left"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lineFac2">
+
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detailBooknowButton"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/Urbanist_Bold"
+                android:text="Book Now!"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

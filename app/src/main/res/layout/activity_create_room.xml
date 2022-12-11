@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/gradient_color"
+    tools:context=".CreateRoomActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/judulCreateRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/Urbanist_Medium"
+            android:layout_gravity="center_horizontal"
+            android:text="Create Room"
+            android:textAlignment="center"
+            android:textColor="@color/biru_ganteng"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/judulCreateRoom2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/Urbanist_Regular"
+            android:text="Design your room"
+            android:textAlignment="center"
+            android:textColor="@color/biru_ganteng"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            android:paddingStart="0dp">
+
+            <EditText
+                android:id="@+id/addName"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_textview"
+                android:ems="10"
+                android:fontFamily="@font/Urbanist_SemiBold"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/dark_grey_hint" />
+
+            <EditText
+                android:id="@+id/addPrice"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_textview"
+                android:ems="10"
+                android:fontFamily="@font/Urbanist_SemiBold"
+                android:hint="Price"
+                android:inputType="numberDecimal"
+                android:paddingStart="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/dark_grey_hint" />
+
+            <EditText
+                android:id="@+id/addAddress"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_textview"
+                android:ems="10"
+                android:fontFamily="@font/Urbanist_SemiBold"
+                android:hint="Address"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/dark_grey_hint" />
+
+            <EditText
+                android:id="@+id/addSize"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/rounded_textview"
+                android:ems="10"
+                android:fontFamily="@font/Urbanist_SemiBold"
+                android:hint="Size"
+                android:inputType="number"
+                android:paddingStart="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/dark_grey_hint" />
+
+            <TextView
+                android:id="@+id/addFacility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:ems="10"
+                android:fontFamily="@font/Urbanist_Bold"
+                android:paddingStart="20dp"
+                android:text="Facility"
+                android:textColor="@color/biru_ganteng"
+
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/ac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="AC"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/refrigerator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Refrigerator"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Wi-Fi"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/bathub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Bathtub"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/balcony"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Balcony"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/restaurant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Restaurant"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/pool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Swimming Pool"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/fitness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:buttonTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:text="Fitness Center"
+                    android:textColor="@color/biru_ganteng"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cityTextView"
+                    android:layout_width="77dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:gravity="center_vertical"
+                    android:paddingStart="20dp"
+                    android:text="City"
+                    android:textColor="@color/biru_ganteng" />
+
+                <Spinner
+                    android:id="@+id/citySpinner"
+                    android:layout_width="146dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/biru_ganteng"
+                    android:backgroundTintMode="screen"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:gravity="center"
+                    android:popupBackground="@color/biru_ganteng"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/bedTextView"
+                    android:layout_width="77dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:gravity="center_vertical"
+                    android:paddingStart="20dp"
+                    android:text="Bed"
+                    android:textColor="@color/biru_ganteng" />
+
+                <Spinner
+                    android:id="@+id/bedSpinner"
+                    android:layout_width="146dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/biru_ganteng"
+                    android:backgroundTintMode="screen"
+                    android:gravity="center"
+                    android:popupBackground="@color/biru_ganteng"
+
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/createRoomButton"
+                    android:layout_width="104dp"
+                    android:layout_height="45dp"
+
+                    android:layout_marginHorizontal="31dp"
+
+                    android:layout_gravity="center_vertical"
+                    android:backgroundTint="@color/green_button"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:gravity="center_horizontal"
+                    android:text="Create"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:cornerRadius="50dp" />
+
+                <Button
+                    android:id="@+id/cancelCreateRoomButton"
+                    android:layout_width="104dp"
+                    android:layout_height="45dp"
+
+                    android:layout_marginHorizontal="31dp"
+
+                    android:backgroundTint="@color/green_button"
+                    android:clickable="true"
+                    android:fontFamily="@font/Urbanist_Bold"
+                    android:gravity="center_horizontal"
+                    android:onClick="newRegisterRenter"
+                    android:text="Cancel"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    app:cornerRadius="20dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

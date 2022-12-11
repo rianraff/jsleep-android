@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,10 +14,6 @@ import android.widget.Toast;
 import com.AldrianRaffiWicaksono.JsleepKM.model.Account;
 import com.AldrianRaffiWicaksono.JsleepKM.request.BaseApiService;
 import com.AldrianRaffiWicaksono.JsleepKM.request.UtilsApi;
-import com.google.gson.Gson;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,15 +28,20 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
         setContentView(R.layout.activity_login);
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        TextView register = findViewById(R.id.register);
-        Button login = findViewById(R.id.loginButton);
-        username = findViewById(R.id.homeEmail);
-        password = findViewById(R.id.homePass);
+        TextView registerButton = findViewById(R.id.registerButton);
+        Button loginButton = findViewById(R.id.loginButton);
+        username = findViewById(R.id.emailText);
+        password = findViewById(R.id.passText);
 
-        register.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent move = new Intent(LoginActivity.this, RegisterActivity.class);
@@ -49,11 +49,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        login.setOnClickListener(new View.OnClickListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Account account = requestAccount();
-                account = requestLogin();
+                Account account = requestLogin();
             }
         });
 
@@ -68,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
                     account = response.body();
                     System.out.println("BERHASIL");
                     System.out.println(account.toString());
+                    Intent move = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(move);
                 }
             }
 
@@ -95,6 +96,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
+                System.out.println(t.toString());
                 Toast.makeText(mContext, "Login Failed", Toast.LENGTH_SHORT).show();
             }
         });
