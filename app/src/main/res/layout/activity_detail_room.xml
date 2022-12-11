@@ -65,7 +65,7 @@
                     android:id="@+id/roomNameVar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/Urbanist_Bold"
+                    android:fontFamily="@font/urbanist_bold"
                     android:text="Hotel Mulia"
                     android:textColor="@color/biru_ganteng"
                     android:textSize="38sp"
@@ -80,7 +80,7 @@
                     android:layout_marginBottom="6dp"
                     android:drawableStart="@drawable/icon_star"
                     android:drawablePadding="5dp"
-                    android:fontFamily="@font/Urbanist_Bold"
+                    android:fontFamily="@font/urbanist_bold"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="5dp"
@@ -105,7 +105,7 @@
                     android:id="@+id/roomCityVar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/Urbanist_SemiBold"
+                    android:fontFamily="@font/urbanist_semiBold"
                     android:text="Jakarta Pusat"
                     android:textColor="@color/biru_ganteng"
                     android:textSize="20sp"
@@ -136,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="10dp"
-                    android:fontFamily="@font/Urbanist_SemiBold"
+                    android:fontFamily="@font/urbanist_semiBold"
                     android:text="Jl. BintaroJalan Asia Afrika Senayan, RT.1/RW.3, Gelora"
                     android:textColor="@color/biru_ganteng" />
 
@@ -164,7 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="10dp"
-                    android:fontFamily="@font/Urbanist_SemiBold"
+                    android:fontFamily="@font/urbanist_semiBold"
                     android:text="500 m"
                     android:textColor="@color/biru_ganteng" />
             </LinearLayout>
@@ -191,7 +191,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="10dp"
-                    android:fontFamily="@font/Urbanist_SemiBold"
+                    android:fontFamily="@font/urbanist_semiBold"
                     android:text="KING"
                     android:textColor="@color/biru_ganteng" />
             </LinearLayout>
@@ -202,7 +202,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="22dp"
-                android:fontFamily="@font/Urbanist_Bold"
+                android:fontFamily="@font/urbanist_bold"
                 android:text="Rp200.000"
                 android:textColor="@color/green_button"
                 android:textSize="20dp"
@@ -215,7 +215,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:fontFamily="@font/Urbanist_Bold"
+                android:fontFamily="@font/urbanist_bold"
                 android:text="Facility"
                 android:textColor="@color/biru_ganteng"
                 android:textSize="18dp"
@@ -237,7 +237,7 @@
                     android:layout_height="wrap_content"
 
                     android:buttonTint="@color/green_button"
-                    android:fontFamily="@font/Urbanist_Bold"
+                    android:fontFamily="@font/urbanist_bold"
                     android:text="AC"
                     android:textColor="@color/biru_ganteng"
                     android:textSize="14sp" />
@@ -248,7 +248,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:buttonTint="@color/green_button"
-                    android:fontFamily="@font/Urbanist_Bold"
+                    android:fontFamily="@font/urbanist_bold"
                     android:text="Refrigerator"
                     android:textColor="@color/biru_ganteng"
                     android:textSize="14sp" />
@@ -259,7 +259,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:buttonTint="@color/green_button"
-                    android:fontFamily="@font/Urbanist_Bold"
+                    android:fontFamily="@font/urbanist_bold"
                     android:text="Wi-Fi"
                     android:textColor="@color/biru_ganteng"
                     android:textSize="14sp" />
@@ -279,7 +279,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/green_button"
-                    android:fontFamily="@font/Urbanist_Bold"
+                    android:fontFamily="@font/urbanist_bold"
                     android:text="Bathtub"
                     android:textColor="@color/biru_ganteng"
                     android:textSize="14sp" />
@@ -290,7 +290,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:buttonTint="@color/green_button"
-                    android:fontFamily="@font/Urbanist_Bold"
+                    android:fontFamily="@font/urbanist_bold"
                     android:text="Balcony"
                     android:textColor="@color/biru_ganteng"
                     android:textSize="14sp" />
@@ -301,7 +301,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:buttonTint="@color/green_button"
-                    android:fontFamily="@font/Urbanist_Bold"
+                    android:fontFamily="@font/urbanist_bold"
                     android:text="Restaurant"
                     android:textColor="@color/biru_ganteng"
                     android:textSize="14sp" />
@@ -320,7 +320,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/green_button"
-                    android:fontFamily="@font/Urbanist_Bold"
+                    android:fontFamily="@font/urbanist_bold"
                     android:text="Swimming Pool"
                     android:textColor="@color/biru_ganteng"
                     android:textSize="14sp" />
@@ -331,7 +331,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:buttonTint="@color/green_button"
-                    android:fontFamily="@font/Urbanist_Bold"
+                    android:fontFamily="@font/urbanist_bold"
                     android:text="Fitness Center"
                     android:textColor="@color/biru_ganteng"
                     android:textSize="14sp" />
@@ -356,7 +356,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/rounded_button"
-                android:fontFamily="@font/Urbanist_Bold"
+                android:fontFamily="@font/urbanist_bold"
                 android:text="Book Now!"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
