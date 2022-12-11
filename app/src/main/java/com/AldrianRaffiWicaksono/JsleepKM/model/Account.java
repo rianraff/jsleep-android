@@ -11,22 +11,27 @@ import com.AldrianRaffiWicaksono.JsleepKM.model.Renter;
  * @author (Aldrian)
  * @version (27 September 2022)
  */
-public class Account extends Serializable
-{
-    public String name;
+public class Account extends Serializable {
+    public  double balance;
     public String email;
+    public String name;
     public String password;
-    public double balance;
     public Renter renter;
 
+    public Account(int id) {
+        super(id);
+    }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "Account{" +
-                "balance=" + balance +
-                ", email='" + email + '\'' +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", renter=" + renter +
+                "balance= " + balance +
+                ", email= '" + email + '\'' +
+                ", name= '" + name + '\'' +
+                ", password= '" + password + '\'' +
+                ", renter= " + renter +
                 '}';
     }
+
+
 }
