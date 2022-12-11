@@ -7,7 +7,7 @@ package com.AldrianRaffiWicaksono.JsleepKM.model;
  * @author (Aldrian)
  * @version (27 September 2022)
  */
-public class Serializable implements Comparable<Serializable>  {
+public class Serializable  {
     public final int id;
 
     protected Serializable(int id) {
