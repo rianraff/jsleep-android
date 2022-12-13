@@ -1,6 +1,6 @@
 package com.AldrianRaffiWicaksono.JsleepKM;
 
-//import static com.AldrianRaffiWicaksono.JsleepKM.MainActivity.cookies;
+import static com.AldrianRaffiWicaksono.JsleepKM.MainActivity.cookies;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,15 +28,35 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
+/**
+ * The {@code ProfileActivity} class provides the UI and UX for the profile page.
+ *
+ *
+ * @author Aldrian Raffi Wicaksono
+ * @version 1.0
+ */
 public class AboutMeActivity extends AppCompatActivity {
+    /**
+     * The {@link TextView} that displays the user's name, user's email, user's balance,
+     * the amount the user wants to top up their account with, option for user to log out, and name,
+     * address, and phone number of the registered renter.
+     */
     TextView name, email, balance, logOutButton;
+    /**
+     * The {@link EditText} where the user can enter the name, address, and phone number of a renter to register.
+     */
     EditText registerRentName,registerRentAddress, registerRentPhone;
     EditText renterName, renterAddress, renterPhone, topUpBalance;
+    /**
+     * Button for topping up the user's account, registering a new renter, confirms the new renter,
+     * and cancelling the registration of the new renter.
+     */
     Button buttonRegisterCancel, buttonCreateRenter, buttonRegisterRenter, topUpButton, buttonOrderList;
     LinearLayout cardRenterDetails, cardRegisterRenter, cardAccount, cardButtonCreateRenter;
     Context mContext;
+    ImageView createRoomButton, backAboutMe;
     BaseApiService mApiService;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +64,9 @@ public class AboutMeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_me);
         mApiService = UtilsApi.getApiService();
         mContext = this;
+
+        backAboutMe = findViewById(R.id.backAboutMe);
+
         //TopUp
         topUpButton = findViewById(R.id.topUpBtn);
         topUpBalance = findViewById(R.id.Topuptxt);
@@ -54,9 +78,9 @@ public class AboutMeActivity extends AppCompatActivity {
         balance = findViewById(R.id.detailBalance);
         logOutButton = findViewById(R.id.logOutButton);
 
-        name.setText(MainActivity.loginToMain.name);
-        email.setText(MainActivity.loginToMain.email);
-        String balanceText = "Rp." + String.valueOf(MainActivity.loginToMain.balance);
+        name.setText(MainActivity.cookies.name);
+        email.setText(MainActivity.cookies.email);
+        String balanceText = "Rp." + String.valueOf(MainActivity.cookies.balance);
         balance.setText(balanceText);
 
         //Button Reg
@@ -74,6 +98,7 @@ public class AboutMeActivity extends AppCompatActivity {
         renterName = findViewById(R.id.detailRenterName);
         renterAddress = findViewById(R.id.detailRenterAddress);
         renterPhone = findViewById(R.id.detailRenterPhoneNumber);
+        createRoomButton = findViewById(R.id.addRoomButton);
 
         //Card
         cardButtonCreateRenter = findViewById(R.id.registerRenter);
@@ -85,20 +110,35 @@ public class AboutMeActivity extends AppCompatActivity {
         cardRegisterRenter.setVisibility(View.GONE);
         cardRenterDetails.setVisibility(View.GONE);
 
+        backAboutMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(AboutMeActivity.this,MainActivity.class);
+                startActivity(move);
+            }
+        });
+
+        createRoomButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(AboutMeActivity.this,CreateRoomActivity.class);
+                startActivity(move);
+            }
+        });
 
         logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent move = new Intent(AboutMeActivity.this,LoginActivity.class);
                 startActivity(move);
-                MainActivity.loginToMain = null;
+                MainActivity.cookies = null;
             }
         });
 
         topUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TopUp(MainActivity.loginToMain.id,Double.parseDouble(topUpBalance.getText().toString()));
+                TopUp(MainActivity.cookies.id,Double.parseDouble(topUpBalance.getText().toString()));
             }
         });
 
@@ -113,7 +153,7 @@ public class AboutMeActivity extends AppCompatActivity {
 
 
 
-        if (MainActivity.loginToMain.renter == null) {
+        if (MainActivity.cookies.renter == null) {
             cardButtonCreateRenter.setVisibility(View.VISIBLE);
             cardRenterDetails.setVisibility(View.GONE);
             cardRegisterRenter.setVisibility(View.GONE);
@@ -131,7 +171,7 @@ public class AboutMeActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             System.out.println(renterName);
-                            Renter renter = requestRenter(MainActivity.loginToMain.id, registerRentName.getText().toString(), registerRentAddress.getText().toString(), registerRentPhone.getText().toString());
+                            Renter renter = requestRenter(MainActivity.cookies.id, registerRentName.getText().toString(), registerRentAddress.getText().toString(), registerRentPhone.getText().toString());
 
 
 
@@ -160,12 +200,21 @@ public class AboutMeActivity extends AppCompatActivity {
             cardRenterDetails.setVisibility(View.VISIBLE);
             cardRegisterRenter.setVisibility(View.GONE);
 
-            renterName.setText(MainActivity.loginToMain.renter.username);
-            renterAddress.setText(MainActivity.loginToMain.renter.address);
-            renterPhone.setText(MainActivity.loginToMain.renter.phoneNumber);
+            renterName.setText(MainActivity.cookies.renter.username);
+            renterAddress.setText(MainActivity.cookies.renter.address);
+            renterPhone.setText(MainActivity.cookies.renter.phoneNumber);
         }
     }
 
+    /**
+     * This function is used to request a new renter
+     *
+     * @param id  the id
+     * @param username  the username
+     * @param address  the address
+     * @param phoneNumber  the phone number
+     * @return Renter
+     */
     protected Renter requestRenter(int id, String username, String address, String phoneNumber ) throws NullPointerException {
         System.out.println("Id: " + id);
         System.out.println("Username: " + username);
@@ -176,7 +225,7 @@ public class AboutMeActivity extends AppCompatActivity {
             public void onResponse(Call<Renter> call, Response<Renter> response) {
                 if(response.isSuccessful()){
                     Renter renter = response.body();
-                    MainActivity.loginToMain.renter = renter;
+                    MainActivity.cookies.renter = renter;
                     Toast.makeText(mContext, "Register Renter Successful", Toast.LENGTH_SHORT).show();
                     Intent startIntent = getIntent();
                     finish();
@@ -195,6 +244,13 @@ public class AboutMeActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * This function is used to top up the user's balance
+     *
+     * @param id  the id
+     * @param balance the user's balance
+     * @return Renter
+     */
     protected Renter TopUp(int id, double balance) {
 
         mApiService.topUp(id, balance).enqueue(new Callback<Boolean>() {
@@ -202,7 +258,7 @@ public class AboutMeActivity extends AppCompatActivity {
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if (response.isSuccessful()) {
                     // Update the TextView with the new balance
-                    MainActivity.loginToMain.balance = MainActivity.loginToMain.balance + balance;
+                    MainActivity.cookies.balance = MainActivity.cookies.balance + balance;
                     System.out.println("BALANCE ADDED");
                     Toast.makeText(mContext, "Top Up Successful!", Toast.LENGTH_LONG).show();
                     Intent startIntent = getIntent();
@@ -222,3 +278,4 @@ public class AboutMeActivity extends AppCompatActivity {
         return null;
     }
 }
+

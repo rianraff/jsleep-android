@@ -1,21 +1,35 @@
 package com.AldrianRaffiWicaksono.JsleepKM.model;
 
-
-import com.AldrianRaffiWicaksono.JsleepKM.model.Serializable;
-import com.AldrianRaffiWicaksono.JsleepKM.model.Renter;
-
 /**
- * A child class from Serializable.
- * use to store user's account data
+ * This class represents an account for a user of the hotel booking system.
  *
- * @author (Aldrian)
- * @version (27 September 2022)
+ * @author Aldrian Raffi Wicaksono
+ * @version 1.0
  */
 public class Account extends Serializable {
-    public  double balance;
-    public String email;
+    /**
+     * The name of the user associated with the account.
+     */
     public String name;
+
+    /**
+     * The email address of the user associated with the account.
+     */
+    public String email;
+
+    /**
+     * The password for the account.
+     */
     public String password;
+
+    /**
+     * The balance of the account.
+     */
+    public double balance;
+
+    /**
+     * The renter associated with the account.
+     */
     public Renter renter;
 
     public Account(int id) {

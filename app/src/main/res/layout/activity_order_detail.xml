@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="40dp"
-    android:background="@color/dark_grey"
+    android:background="@drawable/gradient_color"
     tools:context=".OrderDetailActivity">
 
 
@@ -20,15 +20,13 @@
         />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="174dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="3dp"
-        android:fontFamily="@font/urbanist_bold"
-        android:paddingStart="10dp"
+        android:id="@+id/titleOrderDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingStart="20dp"
         android:text="Order Details"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
+        android:textColor="@color/biru_ganteng"
         android:textSize="26dp"
         app:layout_constraintStart_toEndOf="@+id/backOrderDetail"
         app:layout_constraintTop_toTopOf="parent">
@@ -36,25 +34,25 @@
     </TextView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/layoutOrderDetails"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/rounded_lvitem"
+        android:layout_height="280dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_border_universal_3"
         android:padding="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@id/titleOrderDetail"
+        tools:layout_editor_absoluteX="40dp">
 
 
         <TextView
             android:id="@+id/orderdetail_textviewidbuyer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/urbanist_bold"
-            android:text="Id Pembeli"
-            android:textColor="@color/white"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Buyer Id"
+            android:textColor="@color/biru_ganteng"
+            android:textSize="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,104 +60,115 @@
             android:id="@+id/orderdetail_filltextviewidbuyer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/poppins_bold"
             android:text="Id Pembeli"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewidbuyer" />
+            android:textColor="@color/biru_ganteng"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/orderdetail_textviewfromdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/urbanist_bold"
-            android:text="From"
-            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:text="CheckIn"
+            android:textColor="@color/biru_ganteng"
+            android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/orderdetail_filltextviewidbuyer" />
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewidbuyer" />
 
         <TextView
             android:id="@+id/orderdetail_filltextviewfromdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/urbanist_regular"
-            android:text="From Date"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewfromdate" />
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="CheckIn Date"
+            android:textColor="@color/biru_ganteng"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_filltextviewidbuyer" />
 
         <TextView
             android:id="@+id/orderdetail_textviewtodate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/urbanist_bold"
-            android:text="To"
-            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:text="CheckOut"
+            android:textColor="@color/biru_ganteng"
+            android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/orderdetail_filltextviewfromdate" />
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewfromdate" />
 
         <TextView
             android:id="@+id/orderdetail_filltextviewtodate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/urbanist_regular"
-            android:text="To Date"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewtodate" />
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="CheckOut Date"
+            android:textColor="@color/biru_ganteng"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_filltextviewfromdate" />
 
         <TextView
             android:id="@+id/orderdetail_textviewstatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/urbanist_bold"
-            android:text="Status"
-            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Payment Status"
+            android:textColor="@color/biru_ganteng"
+            android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/orderdetail_filltextviewtodate" />
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewtodate" />
 
         <TextView
             android:id="@+id/orderdetail_filltextviewstatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/urbanist_regular"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/poppins_bold"
             android:text="Status"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewstatus" />
+            android:textColor="@color/biru_ganteng"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_filltextviewtodate" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/orderdetail_buttonaccept"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_button"
-        android:fontFamily="@font/urbanist_bold"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/rounded_lvitem"
+        android:fontFamily="@font/poppins_bold"
         android:text="Accept"
+        android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+        app:layout_constraintTop_toBottomOf="@id/layoutOrderDetails" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/orderdetail_buttoncancel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/rounded_button"
-        android:fontFamily="@font/urbanist_bold"
-        android:text="Reject"
-        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_textview"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Cancel"
+        android:textAllCaps="false"
+        android:textColor="@color/biru_ganteng"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+        app:layout_constraintTop_toBottomOf="@id/orderdetail_buttonaccept" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

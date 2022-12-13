@@ -1,19 +1,14 @@
 package com.AldrianRaffiWicaksono.JsleepKM.model;
 
-import com.AldrianRaffiWicaksono.JsleepKM.model.Serializable;
-
 /**
- * A child class from Serializable.
- * use to store user's personal contact data
+ * The `Renter` class represents a person who rents a room.
  *
- * @author (Aldrian)
- * @version (27 September 2022)
+ * @author Aldrian Raffi Wicaksono
+ * @see Serializable
  */
-public class Renter extends Serializable
-{
-
+public class Renter extends Serializable {
     public String phoneNumber;
-    public String address = "";
+    public String address;
     public String username;
 
     public Renter(int id) {

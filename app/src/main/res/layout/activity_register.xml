@@ -11,45 +11,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:padding="50dp"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="180dp">
 
             <TextView
-                android:id="@+id/registacc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/urbanist_regular"
-                android:foregroundGravity="center"
-                android:text="Create your account"
-                android:textAlignment="center"
-                android:textColor="@color/biru_ganteng"
-                android:textSize="14sp"
-                app:flow_horizontalAlign="center"
-                app:flow_verticalAlign="baseline"
-                app:layout_constraintTop_toBottomOf="@+id/registacc2"
-                tools:layout_editor_absoluteX="0dp" />
-
-            <TextView
-                android:id="@+id/registacc2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
-                android:fontFamily="@font/urbanist_medium"
-                android:foregroundGravity="center"
+                android:id="@+id/registtext2"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Register"
                 android:textAlignment="center"
                 android:textColor="@color/biru_ganteng"
                 android:textSize="34sp"
                 app:flow_horizontalAlign="center"
                 app:flow_verticalAlign="baseline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/registtext3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="sans-serif-light"
+                android:text="Create your account"
+                android:textAlignment="center"
+                android:textColor="@color/biru_ganteng"
+                android:textSize="20sp"
+                app:flow_horizontalAlign="center"
+                app:flow_verticalAlign="baseline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/registtext2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -58,35 +61,34 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_gravity="center"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/rounded_textview"
+            android:layout_marginBottom="25dp"
             android:drawableStart="@drawable/icon_user"
             android:drawablePadding="10dp"
+            android:background="@drawable/rounded_textview"
             android:ems="10"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:fontFamily="@font/poppins_semibold"
             android:hint="Name"
             android:inputType="textEmailAddress"
             android:paddingStart="20dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/biru_ganteng" />
+            android:textColorHint="@color/dark_grey_hint" />
 
         <EditText
             android:id="@+id/registerEmail"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="25dp"
             android:background="@drawable/rounded_textview"
             android:drawableStart="@drawable/icon_email"
             android:drawablePadding="10dp"
             android:ems="10"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:fontFamily="@font/poppins_semibold"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:paddingStart="20dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/biru_ganteng" />
+            android:textColorHint="@color/dark_grey_hint" />
 
         <EditText
             android:id="@+id/registerPassword"
@@ -98,36 +100,21 @@
             android:drawableStart="@drawable/icon_lock"
             android:drawablePadding="10dp"
             android:ems="10"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:fontFamily="@font/poppins_semibold"
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingStart="20dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/biru_ganteng" />
-
-        <TextView
-            android:id="@+id/registacc3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/urbanist_regular"
-            android:foregroundGravity="center"
-            android:text="By signing you agree to our Terms of Use and Privacy Policy"
-            android:textAlignment="center"
-            android:textColor="@color/biru_ganteng"
-            android:textSize="14sp"
-            app:flow_horizontalAlign="center"
-            app:flow_verticalAlign="baseline"
-            app:layout_constraintTop_toBottomOf="@+id/registacc2"
-            tools:layout_editor_absoluteX="0dp" />
+            android:textColorHint="@color/dark_grey_hint" />
 
         <Button
             android:id="@+id/registerButton2"
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:layout_gravity="center"
-            android:layout_marginTop="120dp"
-            android:backgroundTint="@color/biru_ganteng"
-            android:fontFamily="@font/urbanist_bold"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/green_button"
+            android:fontFamily="@font/poppins_bold"
             android:text="Register"
             android:textAllCaps="false"
             android:textColor="@color/white"

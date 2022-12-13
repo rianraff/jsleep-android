@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/dark_grey"
+    android:background="@drawable/gradient_color"
     android:layout_height="match_parent"
     tools:context=".CreatePaymentActivity"
     android:padding="20dp">
@@ -18,29 +18,29 @@
             android:id="@+id/backPaymentInvoie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             android:src="@drawable/icon_arrow_left"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/createpayment_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Invoice"
-            android:fontFamily="@font/urbanist_bold"
-            android:textColor="@color/white"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Invoice"
+            android:textColor="@color/biru_ganteng"
             android:textSize="25dp"
             app:layout_constraintStart_toEndOf="@id/backPaymentInvoie"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_marginTop="20dp"
             android:id="@+id/createpayment_title_layout"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@drawable/rounded_lvitem"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_border_universal_2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/createpayment_title">
 
@@ -48,135 +48,195 @@
                 android:id="@+id/createpayment_title_icon"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/icon_hotel_listview"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="15dp"
-                android:src="@drawable/icon_hotel_listview"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/createpayment_title_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hotel Melati"
-                android:fontFamily="@font/urbanist_bold"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toEndOf="@+id/createpayment_title_icon"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="20dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Patrick Star House"
+                android:textColor="@color/biru_ganteng"
                 android:textSize="20sp"
-                />
+                app:layout_constraintStart_toEndOf="@+id/createpayment_title_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/piCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Sea, "
+                android:textColor="@color/biru_ganteng"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/createpayment_title_icon"
+                app:layout_constraintTop_toBottomOf="@+id/createpayment_title_name" />
+
             <TextView
                 android:id="@+id/createpayment_title_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jl. Haji Kodja"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Jl. Bikini Bottom"
+                android:textColor="@color/biru_ganteng"
                 android:textSize="15sp"
-                android:fontFamily="@font/urbanist_regular"
-                android:textColor="@color/green_icon"
-                android:layout_marginTop="2dp"
-                android:layout_marginStart="15dp"
-                app:layout_constraintStart_toEndOf="@+id/createpayment_title_icon"
-                app:layout_constraintTop_toBottomOf="@+id/createpayment_title_name"
+                app:layout_constraintStart_toEndOf="@+id/piCity"
+                app:layout_constraintTop_toBottomOf="@+id/createpayment_title_name" />
 
-                />
-            <View
-                android:layout_marginVertical="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/rounded_button"
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutCheck"
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
             android:padding="20dp"
-            android:background="@drawable/rounded_lvitem"
-            android:layout_height="450dp"
-            app:layout_constraintTop_toBottomOf="@id/createpayment_title_layout">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_height="wrap_content">
+            app:layout_constraintTop_toBottomOf="@id/createpayment_title_layout"
+            tools:layout_editor_absoluteX="20dp">
 
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Check In"
-                    android:fontFamily="@font/urbanist_bold"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"/>
-                <TextView
-                    android:id="@+id/createpayment_from"
-                    android:fontFamily="@font/urbanist_regular"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="From"
-                    android:textSize="14sp"
-                    />
-
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Check Out"
-                    android:fontFamily="@font/urbanist_bold"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"/>
-                <TextView
-                    android:id="@+id/createpayment_to"
-                    android:fontFamily="@font/urbanist_regular"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="To"
-                    android:textSize="14sp"
-                    />
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total Price"
-                    android:fontFamily="@font/urbanist_bold"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    />
-                <TextView
-                    android:id="@+id/createpayment_price"
-                    android:fontFamily="@font/urbanist_regular"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total Price"
-                    android:textSize="14sp"
-                    />
-
-            </LinearLayout>
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/createpayment_button"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/piCheckIn"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/urbanist_bold"
-                android:textColor="@color/white"
-                android:background="@drawable/rounded_button"
-                android:textAllCaps="false"
-                android:text="Create Payment"
+
+                android:fontFamily="@font/poppins_medium"
+                android:text="Check In"
+                android:textColor="@color/biru_ganteng"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintTop_toTopOf="@id/layoutCheck" />
+
+            <TextView
+                android:id="@+id/createpayment_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/poppins_bold"
+                android:text="From"
+                android:textColor="@color/biru_ganteng"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Check Out"
+                android:textColor="@color/biru_ganteng"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/piCheckIn" />
+
+            <TextView
+                android:id="@+id/createpayment_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="To"
+                android:textColor="@color/biru_ganteng"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/createpayment_from" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutTotalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_textview"
+            android:padding="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/layoutCheck"
+            tools:layout_editor_absoluteX="20dp">
+
+            <TextView
+                android:id="@+id/piPriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Price"
+                android:textColor="@color/biru_ganteng"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/piPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Price"
+                android:textColor="@color/biru_ganteng"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/piTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:fontFamily="@font/poppins_medium"
+                android:text="Total Price"
+                android:textColor="@color/biru_ganteng"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/piPrice" />
+
+            <TextView
+                android:id="@+id/createpayment_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Total Price"
+                android:textColor="@color/biru_ganteng"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/piPrice" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/createpayment_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Create Payment"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutTotalPrice" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

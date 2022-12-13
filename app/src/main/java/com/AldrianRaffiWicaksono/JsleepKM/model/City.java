@@ -1,12 +1,14 @@
 package com.AldrianRaffiWicaksono.JsleepKM.model;
 
-
 /**
- * Enumeration class City - write a description of the enum class here
+ * This class represents an account for a user of the hotel booking system.
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Aldrian Raffi Wicaksono
+ * @version 1.0
  */
-public enum City{
-    SURABAYA, DEPOK, LAMPUNG, JAKARTA, BANDUNG, SEMARANG, MEDAN, BEKASI, BALI
+public enum City
+{
+    SURABAYA,DEPOK,LAMPUNG,
+    JAKARTA,BANDUNG,SEMARANG,
+    MEDAN,BEKASI,BALI
 }

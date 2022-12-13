@@ -1,31 +1,28 @@
 package com.AldrianRaffiWicaksono.JsleepKM.model;
-import com.AldrianRaffiWicaksono.JsleepKM.model.Serializable;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-
 /**
- * A child class from Serializable.
- * use to store user's room data
+ * The `Room` class represents a room in a hotel.
  *
- * @author (Aldrian)
- * @version (27 September 2022)
+ * <p>This class extends the `Serializable` class and adds additional attributes and methods related to the room,
+ * such as the room number, the room type, and methods for checking the availability of a room and making a booking.</p>
+ *
+ * @author Aldrian Raffi Wicaksono
+ * @see Serializable
  */
-public class Room extends Serializable
-{
-
+public class Room extends Serializable {
     public int size;
-    public Price price;
-    public ArrayList<Facility> facility = new ArrayList<>();
     public String name;
-
+    public ArrayList<Facility> facility = new ArrayList<>();
+    public Price price;
+    public String address;
     public BedType bedType;
     public City city;
-    public String address;
+    public ArrayList<Date> booked;
     public int accountId;
 
-    public ArrayList<Date> booked;
 
     public Room(int id, int accountId, String name, int size, Price price,
                 ArrayList<Facility> facility, City city, String address, BedType bedType) {

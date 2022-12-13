@@ -4,57 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="40dp"
     android:outlineProvider="bounds"
     android:background="@drawable/gradient_color"
+    android:padding="30dp"
     tools:context=".AboutMeActivity">
 
     <LinearLayout
         android:id="@+id/cardAccount"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="340dp"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+
             android:baselineAligned="false"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/backAboutMe"
-                android:layout_width="49dp"
-                android:layout_height="32dp"
-                android:paddingStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
                 android:src="@drawable/icon_arrow_left"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:fontFamily="@font/urbanist_bold"
-                android:text="Profile"
-                android:textColor="@color/biru_ganteng"
-                android:textSize="25dp"
-                app:layout_constraintStart_toEndOf="@id/backAboutMe"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/logOutButton"
-                android:layout_width="98dp"
-                android:layout_height="31dp"
-                android:layout_marginEnd="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
                 android:drawableStart="@drawable/icon_logout"
-                android:drawablePadding="10dp"
-                android:fontFamily="@font/urbanist_medium"
-                android:text="Logout"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/biru_ganteng"
                 android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,17 +52,16 @@
         <TextView
             android:id="@+id/detailName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
             android:background="@android:color/transparent"
             android:ems="10"
-            android:fontFamily="@font/urbanist_bold"
+            android:fontFamily="@font/poppins_bold"
             android:inputType="textPersonName"
             android:text="Aldrian Raffi"
             android:textAlignment="center"
             android:textColor="@color/biru_ganteng"
-            android:textSize="25dp" />
+            android:textSize="34sp" />
 
         <TextView
             android:id="@+id/detailEmail"
@@ -81,9 +69,9 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:ems="10"
-            android:fontFamily="@font/urbanist_bold"
+            android:fontFamily="@font/poppins_medium"
             android:inputType="textEmailAddress"
-            android:text="aldrian.raffi@gmail.com"
+            android:text="rianraffi@gmail.com"
             android:textAlignment="center"
             android:textColor="@color/biru_ganteng"
             android:textSize="15dp" />
@@ -91,68 +79,85 @@
         <LinearLayout
             android:id="@+id/layout"
             android:layout_width="match_parent"
-            android:layout_height="81dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:fontFamily="@font/urbanist_bold"
-                android:text="Balance"
-                android:textAlignment="center"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Current Balance "
                 android:textColor="@color/biru_ganteng"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/detailBalance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
                 android:layout_weight="1"
-                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:background="@drawable/rounded_textview"
                 android:ems="10"
-                android:fontFamily="@font/urbanist_bold"
+                android:fontFamily="@font/poppins_bold"
                 android:inputType="numberDecimal"
                 android:textAlignment="center"
                 android:textColor="@color/biru_ganteng"
                 android:textSize="34sp" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/Topuptxt"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginTop="17dp"
-            android:background="@drawable/rounded_textview"
-            android:ems="10"
-            android:fontFamily="@font/urbanist_bold"
-            android:hint="Enter your top up amount"
-            android:inputType="textEmailAddress"
-            android:paddingStart="20dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/biru_ganteng"
-            android:textSize="15dp" />
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/topUpBtn"
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/topuplayout"
             android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/biru_ganteng"
-            android:fontFamily="@font/urbanist_bold"
-            android:text="Top Up"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:cornerRadius="50dp" />
+            android:layout_height="63dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/Topuptxt"
+                android:layout_width="150dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_border_universal"
+                android:ems="10"
+                android:fontFamily="@font/poppins_semibold"
+                android:hint="Amount"
+                android:inputType="textEmailAddress"
+                android:paddingStart="20dp"
+                android:textColor="@color/biru_ganteng"
+                android:textColorHint="@color/biru_ganteng"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/topUpBtn"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:layout_gravity="center_vertical"
+                android:backgroundTint="@color/green_button"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Top Up"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:cornerRadius="50dp" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
@@ -172,7 +177,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="25dp"
-            android:fontFamily="@font/urbanist_bold"
+            android:fontFamily="@font/poppins_bold"
             android:text="Renter"
             android:textColor="@color/white"
             android:textSize="23dp" />
@@ -184,7 +189,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:backgroundTint="@color/green_button"
-            android:fontFamily="@font/urbanist_bold"
+            android:fontFamily="@font/poppins_bold"
             android:text="Register Renter"
             android:textAllCaps="false"
             android:textColor="@color/white"
@@ -208,7 +213,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="25dp"
-            android:fontFamily="@font/urbanist_bold"
+            android:fontFamily="@font/poppins_bold"
             android:text="Renter"
             android:textColor="@color/white"
             android:textSize="23dp" />
@@ -222,7 +227,7 @@
             android:layout_marginBottom="15dp"
             android:background="@drawable/rounded_textview"
             android:ems="10"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:fontFamily="@font/poppins_semibold"
             android:hint="Name"
             android:inputType="textEmailAddress"
             android:paddingStart="20dp"
@@ -237,7 +242,7 @@
             android:layout_marginBottom="15dp"
             android:background="@drawable/rounded_textview"
             android:ems="10"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:fontFamily="@font/poppins_semibold"
             android:hint="Address"
             android:inputType="textEmailAddress"
             android:paddingStart="20dp"
@@ -252,7 +257,7 @@
             android:layout_marginBottom="6dp"
             android:background="@drawable/rounded_textview"
             android:ems="10"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:fontFamily="@font/poppins_semibold"
             android:hint="Phone Number"
             android:inputType="number"
             android:paddingStart="20dp"
@@ -274,7 +279,7 @@
                 android:layout_height="57dp"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/green_button"
-                android:fontFamily="@font/urbanist_bold"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="Register"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -289,7 +294,7 @@
                 android:layout_height="57dp"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/green_button"
-                android:fontFamily="@font/urbanist_bold"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="Cancel"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -306,7 +311,8 @@
     <LinearLayout
         android:id="@+id/cardRenterDetails"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -317,20 +323,30 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textViewRent2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/urbanist_bold"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_vertical"
                 android:text="Renter"
                 android:textColor="@color/biru_ganteng"
                 android:textSize="23dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/addRoomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/icon_addroom"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textViewRent2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
@@ -338,14 +354,16 @@
                 android:layout_width="140dp"
                 android:layout_height="55dp"
                 android:layout_gravity="center"
-                android:layout_marginEnd="30dp"
+
+
                 android:backgroundTint="@color/biru_ganteng"
-                android:fontFamily="@font/urbanist_bold"
+                android:fontFamily="@font/poppins_bold"
                 android:text="Order List"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:cornerRadius="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -354,43 +372,43 @@
         <EditText
             android:id="@+id/detailRenterName"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="56dp"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/rounded_textview"
             android:ems="10"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:fontFamily="@font/poppins_semibold"
             android:paddingStart="20dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="@color/biru_ganteng"
+            android:textColorHint="@color/biru_ganteng" />
 
         <EditText
             android:id="@+id/detailRenterAddress"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="56dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/rounded_textview"
             android:ems="10"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:fontFamily="@font/poppins_semibold"
             android:paddingStart="20dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="@color/biru_ganteng"
+            android:textColorHint="@color/biru_ganteng" />
 
         <EditText
             android:id="@+id/detailRenterPhoneNumber"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="56dp"
             android:layout_gravity="center"
             android:layout_marginBottom="25dp"
             android:background="@drawable/rounded_textview"
             android:ems="10"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:fontFamily="@font/poppins_semibold"
             android:inputType="number"
             android:paddingStart="20dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="@color/biru_ganteng"
+            android:textColorHint="@color/biru_ganteng" />
 
     </LinearLayout>
 

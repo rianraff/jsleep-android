@@ -16,10 +16,19 @@ import com.AldrianRaffiWicaksono.JsleepKM.model.Payment;
 import com.AldrianRaffiWicaksono.JsleepKM.request.BaseApiService;
 import com.AldrianRaffiWicaksono.JsleepKM.request.UtilsApi;
 
+import java.text.SimpleDateFormat;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * This class represents an activity that displays details of an order made by a buyer.
+ *
+ * <p>The activity allows the renter to accept or cancel the order.</p>
+ * @author Aldrian Raffi Wicaksono
+ * @version 1.0
+ */
 public class OrderDetailActivity extends AppCompatActivity {
     BaseApiService mApiService;
     Context mContext;
@@ -49,9 +58,15 @@ public class OrderDetailActivity extends AppCompatActivity {
         accept = findViewById(R.id.orderdetail_buttonaccept);
         cancel = findViewById(R.id.orderdetail_buttoncancel);
 
+
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE, MMM d yyyy");
+        String dateFrom = dateFormat.format(payment.from);
+        String dateTo = dateFormat.format(payment.to);
+
         buyerId.setText(String.valueOf(payment.buyerId));
-        from.setText(payment.from.toString());
-        to.setText(payment.to.toString());
+        from.setText(dateFrom);
+        to.setText(dateTo);
         status.setText(payment.status.toString());
 
         backOrderDetail.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +100,12 @@ public class OrderDetailActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This method is used to accept an order with a given ID.
+     *
+     * @param id The ID of the order to be accepted.
+     * @return Boolean value indicating whether the order was successfully accepted.
+     */
     protected Boolean acceptOrder(int id) {
         //System.out.println(pageSize);
         mApiService.accept(id).enqueue(new Callback<Boolean>() {
@@ -111,6 +132,12 @@ public class OrderDetailActivity extends AppCompatActivity {
         return null;
     }
 
+    /**
+     * This method is used to cancel an order with a given ID.
+     *
+     * @param id The ID of the order to be cancelled.
+     * @return Boolean value indicating whether the order was successfully cancelled.
+     */
     protected Boolean cancelOrder(int id) {
         //System.out.println(pageSize);
         mApiService.cancel(id).enqueue(new Callback<Boolean>() {

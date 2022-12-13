@@ -19,59 +19,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <com.google.android.material.imageview.ShapeableImageView
 
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginTop="50dp"
             android:scaleType="centerCrop"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="40dp"
-
             android:src="@drawable/logo_jsleep"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="61dp" />
+            android:layout_gravity="center_horizontal"
+
+            />
 
         <TextView
-            android:id="@+id/loginacc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/urbanist_medium"
-            android:foregroundGravity="center"
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppins_medium"
             android:text="Welcome Back!"
             android:textAlignment="center"
             android:textColor="@color/biru_ganteng"
             android:textSize="34sp"
             app:flow_horizontalAlign="center"
-            app:flow_verticalAlign="baseline"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.502" />
+            app:flow_verticalAlign="baseline" />
 
         <TextView
-            android:id="@+id/loginacc2"
-            android:layout_width="match_parent"
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:fontFamily="@font/urbanist_regular"
-            android:foregroundGravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:fontFamily="sans-serif-light"
             android:text="Login to your account"
             android:textAlignment="center"
             android:textColor="@color/biru_ganteng"
-            android:textSize="16sp"
+            android:textSize="20sp"
             app:flow_horizontalAlign="center"
-            app:flow_verticalAlign="baseline"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.502" />
+            app:flow_verticalAlign="baseline" />
 
         <EditText
-            android:id="@+id/emailText"
+            android:id="@+id/emailEdit"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_gravity="center"
@@ -80,15 +68,15 @@
             android:drawableStart="@drawable/icon_email"
             android:drawablePadding="10dp"
             android:ems="10"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:fontFamily="@font/poppins_semibold"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:paddingStart="17dp"
-            android:textColor="@color/white"
+            android:textColor="@color/biru_ganteng"
             android:textColorHint="@color/biru_ganteng" />
 
         <EditText
-            android:id="@+id/passText"
+            android:id="@+id/passwordEdit"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_gravity="center"
@@ -96,76 +84,43 @@
             android:drawableStart="@drawable/icon_lock"
             android:drawablePadding="10dp"
             android:ems="10"
-            android:fontFamily="@font/urbanist_semiBold"
+            android:fontFamily="@font/poppins_semibold"
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingStart="17dp"
-            android:textColor="@color/white"
+            android:textColor="@color/biru_ganteng"
             android:textColorHint="@color/biru_ganteng" />
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="@color/biru_ganteng"
+            android:layout_marginTop="70dp"
+            android:backgroundTint="@color/green_button"
 
-            android:fontFamily="@font/urbanist_bold"
-            android:text="Login"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_bold"
             android:textSize="18sp"
+            app:cornerRadius="50dp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
 
 
-            app:cornerRadius="50dp" />
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp">
-
-            <TextView
-                android:id="@+id/tvText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="or"
-                android:textColor="@color/biru_ganteng" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-                android:layout_toLeftOf="@id/tvText"
-                android:background="@color/biru_ganteng" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="30dp"
-                android:layout_toRightOf="@id/tvText"
-                android:background="@color/biru_ganteng" />
-
-        </RelativeLayout>
+            android:text="Login"/>
 
         <Button
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:layout_gravity="center"
+
+            android:layout_marginTop="10dp"
+
             android:layout_marginBottom="150dp"
-            android:backgroundTint="@color/biru_ganteng"
-            android:fontFamily="@font/urbanist_bold"
-            android:text="Register"
+            android:backgroundTint="@color/green_button"
+            android:fontFamily="@font/poppins_bold"
             android:textAllCaps="false"
+            android:text="Register"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:cornerRadius="50dp" />

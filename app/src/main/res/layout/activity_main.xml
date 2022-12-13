@@ -8,14 +8,25 @@
     android:id="@+id/mainConstraint"
     android:background="@drawable/gradient_color">
 
+    <com.google.android.material.imageview.ShapeableImageView
+
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo_jsleep"
+        app:layout_constraintBottom_toTopOf="@+id/listviewer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ListView
         android:id="@+id/listviewer"
-        android:layout_width="match_parent"
-        android:layout_height="578dp"
+        android:layout_width="410dp"
+        android:layout_height="450dp"
         android:layout_marginTop="90dp"
-        android:divider="@color/dark_grey"
         android:dividerHeight="15dp"
         android:paddingHorizontal="20dp"
+        android:divider="@color/dark_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,53 +38,67 @@
         android:id="@+id/linPaginate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/listviewer">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/prev"
             android:layout_width="216dp"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="30dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/biru_ganteng"
+            android:background="@drawable/rounded_lvitem"
+            android:backgroundTint="@color/green_button"
+            android:fontFamily="@font/poppins_bold"
             android:insetLeft="5dp"
             android:insetRight="5dp"
             android:text="Prev"
-            android:textStyle="bold" />
+            android:textColor="@color/white" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/next"
             android:layout_width="216dp"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="30dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/biru_ganteng"
+            android:background="@drawable/rounded_lvitem"
+            android:backgroundTint="@color/green_button"
+            android:fontFamily="@font/poppins_bold"
             android:insetLeft="5dp"
             android:insetRight="5dp"
             android:text="Next"
-            android:textStyle="bold" />
+            android:textColor="@color/white" />
 
         <EditText
             android:id="@+id/numberlist"
             android:layout_width="180dp"
             android:layout_height="65dp"
             android:layout_weight="1"
+            android:background="@drawable/rounded_border_universal"
             android:ems="10"
+
+            android:fontFamily="@font/poppins_bold"
             android:inputType="number"
             android:text="1"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/biru_ganteng" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/go"
-            android:layout_width="216dp"
-            android:layout_height="60dp"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="30dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/biru_ganteng"
+            android:background="@drawable/rounded_lvitem"
+            android:backgroundTint="@color/green_button"
+            android:fontFamily="@font/poppins_bold"
             android:insetLeft="5dp"
             android:insetRight="5dp"
             android:text="GO"
-            android:textStyle="bold" />
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -83,10 +108,9 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_lvitem"
-        android:paddingHorizontal="40dp"
-        android:paddingVertical="20dp"
+        android:padding="21dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listviewer">
+        app:layout_constraintTop_toBottomOf="@id/linPaginate">
 
         <TextView
             android:id="@+id/homeButton"
@@ -94,9 +118,8 @@
             android:layout_height="wrap_content"
             android:drawableTop="@drawable/icon_home"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/urbanist_regular"
-            android:text="Home"
-            android:textColor="@color/biru_cantik"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/green_icon"
 
             app:layout_constraintStart_toStartOf="@id/bottomBar"
             app:layout_constraintTop_toTopOf="parent" />
@@ -108,22 +131,20 @@
             android:layout_height="wrap_content"
             android:drawableTop="@drawable/icon_search"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/urbanist_regular"
-            android:text="Search"
-            android:textColor="@color/biru_cantik"
-            app:layout_constraintEnd_toStartOf="@+id/addButton"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/green_icon"
+            app:layout_constraintEnd_toStartOf="@+id/historyButton"
             app:layout_constraintStart_toEndOf="@id/homeButton"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/addButton"
+            android:id="@+id/historyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/icon_roomadd"
+            android:drawableTop="@drawable/icon_history"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/urbanist_regular"
-            android:text="Create"
-            android:textColor="@color/biru_cantik"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/green_icon"
             app:layout_constraintEnd_toStartOf="@+id/accountButton"
             app:layout_constraintStart_toEndOf="@+id/searchButton"
             app:layout_constraintTop_toTopOf="parent" />
@@ -134,9 +155,8 @@
             android:layout_height="wrap_content"
             android:drawableTop="@drawable/icon_user_bottombar"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/urbanist_regular"
-            android:text="Profile"
-            android:textColor="@color/biru_cantik"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/green_icon"
 
             app:layout_constraintEnd_toEndOf="@+id/bottomBar"
             app:layout_constraintTop_toTopOf="parent" />

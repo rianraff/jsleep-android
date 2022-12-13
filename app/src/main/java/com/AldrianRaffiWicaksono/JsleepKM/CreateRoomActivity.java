@@ -26,13 +26,35 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * The {@code CreateRoomActivity} class provides the UX for creating a new room.
+ *
+ * @author Aldrian Raffi Wicaksono
+ * @version 1.0
+ *
+ */
 public class CreateRoomActivity extends AppCompatActivity {
-    Context mContext;
+    /**
+     * A {@link BaseApiService} instance for making API requests.
+     */
     BaseApiService mApiService;
+    /**
+     * The {@link Context} of the activity.
+     */
+    Context mContext;
+
+    /**
+     * The {@link RadioButton} that the renter can choose from the room's facility- ac, refrigerator, bath tub,
+     * balcony, restaurant, pool, and fitness center- is provided with the room.
+     */
     RadioButton ac, refrig, wifi, bathub, balcony, restaurant, pool, fitness;
     Spinner city, bed;
     EditText nameInput, priceInput, sizeInput, addressInput;
     Button createRoom, cancelCreateRoom;
+
+    /**
+     * Arraylist of facilities to store the facilities provided.
+     */
     ArrayList<Facility> facility = new ArrayList<Facility>();
 
     @Override
@@ -105,10 +127,24 @@ public class CreateRoomActivity extends AppCompatActivity {
             int size = Integer.parseInt(sizeInput.getText().toString());
             int price = Integer.parseInt(priceInput.getText().toString());
 
-            requestRoom(MainActivity.loginToMain.id, nameInput.getText().toString(), size,price, facility, city, addressInput.getText().toString(), bedtype);
+            requestRoom(MainActivity.cookies.id, nameInput.getText().toString(), size,price, facility, city, addressInput.getText().toString(), bedtype);
         });
     }
 
+
+    /**
+     * This function is used to to request a new room.
+     *
+     * @param id  the id
+     * @param name  the name of the room
+     * @param size  the size of the room
+     * @param price  the price of the room
+     * @param facility the facilities provided with the room
+     * @param city  the city the room located to
+     * @param address   the address the room located to
+     * @param bedType the bed type the room has
+     * @return Room
+     */
     protected Room requestRoom(int id, String name, int size, int price, ArrayList<Facility> facility, City city, String address, BedType bedType) {
         System.out.println("Id: " + id);
         System.out.println("Name: " + name);

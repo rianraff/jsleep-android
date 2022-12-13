@@ -22,7 +22,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
+/**
+ * The RenterOrderListAcitivity class is an Android activity that displays a list of orders for a given renter.
+ *
+ * @author Aldrian Raffi Wicaksono
+ * @version 1.0
+ */
 public class RenterOrderListActivity extends AppCompatActivity {
 
     ListView orderList;
@@ -44,13 +49,15 @@ public class RenterOrderListActivity extends AppCompatActivity {
         mContext = this;
         orderList = findViewById(R.id.seeorder_ListView);
         orderList.setOnItemClickListener(this::onItemClick);
-        getOrderForRenter(MainActivity.loginToMain.id);
-
-
-
+        getOrderForRenter(MainActivity.cookies.id);
 
     }
 
+    /**
+     * Retrieves the orders for a given renter ID.
+     *
+     * @param renterId the ID of the renter
+     */
     protected void getOrderForRenter(int renterId){
         mApiService.getOrderForRenter(renterId,0,10).enqueue(new Callback<List<Payment>>() {
             @Override
@@ -60,7 +67,7 @@ public class RenterOrderListActivity extends AppCompatActivity {
                     assert orderlist != null;
                     orderListData = new ArrayList<Payment>(orderlist);
                     Toast.makeText(mContext, "Get Order Success", Toast.LENGTH_SHORT).show();
-                    OrderListAdapter adapter = new OrderListAdapter(mContext,orderListData);
+                    OrderListCustomAdapter adapter = new OrderListCustomAdapter(mContext,orderListData);
                     orderList.setAdapter(adapter);
 
                 }

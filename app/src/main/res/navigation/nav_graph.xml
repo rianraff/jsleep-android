@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/search_button"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Search Button"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="collapseActionView|always"/>
 
-    <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.AldrianRaffiWicaksono.JsleepKM.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first" >
+    <item android:id="@+id/account_button"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Account Button"
+        app:showAsAction="collapseActionView|always"/>
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.AldrianRaffiWicaksono.JsleepKM.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second" >
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
-</navigation>
+    <item android:id="@+id/add_button"
+        android:icon="@drawable/ic_baseline_add_box_24"
+        android:title="Create Button"
+        app:showAsAction="collapseActionView|always"/>
+</menu>

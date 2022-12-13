@@ -13,19 +13,42 @@ import android.widget.TextView;
 import com.AldrianRaffiWicaksono.JsleepKM.model.Facility;
 import com.AldrianRaffiWicaksono.JsleepKM.model.Room;
 
+/**
+ * The {@code RoomDetailActivity} class provides the UX for displaying the details of a room.
+ *
+ * @author Aldrian Raffi Wicaksono
+ * @version 1.0
+ *
+ */
 public class DetailRoomActivity extends AppCompatActivity {
 
     TextView showName, showPrice, showSize, showAddress, showBedtype, showCity;
+    /**
+     * The {@link RadioButton} that displays the room's facility : ac, refrigerator, bath tub, balcony
+     * restaurant, pool, and fitness center.
+     */
     RadioButton ac, refrig, wifi, bathub, balcony, restaurant, pool, fitness;
+
+    /**
+     * Button for booking a room.
+     */
     Button buttonBookNow;
+
+    /**
+     * The renter's room information.
+     */
     public static Room room;
 
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_room);
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
         room = MainActivity.listRoom.get(MainActivity.roomIndex);
 
         buttonBookNow = findViewById(R.id.detailBooknowButton);
@@ -46,6 +69,10 @@ public class DetailRoomActivity extends AppCompatActivity {
         pool = findViewById(R.id.pool);
         fitness = findViewById(R.id.fitness);
 
+
+        String City = String.valueOf(room.city);
+        showCity.setText(City);
+
         showName.setText(room.name);
         String price = "Rp. " + String.valueOf(room.price.price + "/ Night");
         showPrice.setText(price);
@@ -53,6 +80,7 @@ public class DetailRoomActivity extends AppCompatActivity {
         showSize.setText(size);
         showAddress.setText(room.address);
 //        showBedtype.setText(room.bedType.toString());
+
 
         String finalBed = room.bedType.toString() + " BED";
         System.out.println(finalBed);

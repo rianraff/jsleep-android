@@ -29,44 +29,77 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity<v> extends AppCompatActivity {
+/**
+ * The {@code MainActivity} class provides the UX for the main screen.
+ *
+ * @author Aldrian Raffi Wicaksono
+ * @version 1.0
+ */
+public class MainActivity extends AppCompatActivity {
 
-    public static Account loginToMain;
+    public static Account cookies;
 
+    /**
+     * A {@link BaseApiService} instance for making API requests.
+     */
     BaseApiService mApiService;
+
+    /**
+     * The {@link Context} of the activity.
+     */
     Context mContext;
+
+    /**
+     * The `ListView` used to display the list of rooms.
+     */
     ListView listView;
+
+    /**
+     * The list of rooms to be displayed.
+     */
     List<Room> activitylist;
-    TextView home, search, profile, createRoom;
+    TextView home, search, profile, historyButton;
     public static ArrayList<Room> listRoom;
+
+    /**
+     * The index of the selected room.
+     */
     public static int roomIndex;
+
+    /**
+     * The current page of rooms being displayed.
+     */
     int current;
     Button next, prev;
     int currentPage;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        current = 0;
         super.onCreate(savedInstanceState);
         try
         {
             this.getSupportActionBar().hide();
         }
         catch (NullPointerException e){}
+
         setContentView(R.layout.activity_main);
 
         mApiService = UtilsApi.getApiService();
         mContext = this;
         activitylist = getRoomList(current);
 
-        next = findViewById(R.id.prev);
-        prev = findViewById(R.id.next);
+        next = findViewById(R.id.next);
+        prev = findViewById(R.id.prev);
         listView = (ListView) findViewById(R.id.listviewer);
         listView.setOnItemClickListener(this::onItemClick);
 
         home = findViewById(R.id.homeButton);
         search = findViewById(R.id.searchButton);
         profile = findViewById(R.id.accountButton);
-        createRoom = findViewById(R.id.addButton);
+        historyButton = findViewById(R.id.historyButton);
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +109,7 @@ public class MainActivity<v> extends AppCompatActivity {
             }
         });
 
-        createRoom.setOnClickListener(new View.OnClickListener() {
+        historyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent move = new Intent (MainActivity.this, CreateRoomActivity.class);
@@ -108,15 +141,16 @@ public class MainActivity<v> extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.nav_bar, menu);
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.nav_bar, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.person_button:
+            case R.id.account_button:
                 Intent move = new Intent(MainActivity.this, AboutMeActivity.class);
                 startActivity(move);
                 return true;
@@ -132,7 +166,7 @@ public class MainActivity<v> extends AppCompatActivity {
     public boolean onPrepareOptionsMenu(Menu menu)
     {
         MenuItem register = menu.findItem(R.id.add_button);
-        if(loginToMain.renter == null){
+        if(cookies.renter == null){
             register.setVisible(false);
         }
         else {
@@ -140,6 +174,17 @@ public class MainActivity<v> extends AppCompatActivity {
         }
         return true;
     }
+
+
+
+
+    /**
+     * This Function is used to get the list of room
+     * @param page is the page number
+     * @return the list of room
+     * @see Room
+     * @author Bisma Alif Alghifari
+     */
 
     protected List<Room> getRoomList(int page) {
         //System.out.println(pageSize);
@@ -150,7 +195,7 @@ public class MainActivity<v> extends AppCompatActivity {
                     activitylist = response.body();
                     assert activitylist != null;
                     listRoom = new ArrayList<Room>(activitylist);
-                    CustomListAdapter adapter = new CustomListAdapter(mContext, listRoom);
+                    ListviewCustomAdapter adapter = new ListviewCustomAdapter(mContext, listRoom);
                     listView.setAdapter(adapter);
                     System.out.println("Get Room Success");
 
@@ -167,6 +212,14 @@ public class MainActivity<v> extends AppCompatActivity {
         return null;
     }
 
+    /**
+     *
+     * @param v is the view
+     * @param position is the position of the room
+     * @param id is the id of the room
+     * @author Bisma Alif Alghifari
+     */
+
     public void onItemClick (AdapterView<?> l, View v, int position, long id){
         System.out.println("onItemClick Success");
         Log.i("ListView", "You clicked Item np : " + id + " at position:" + position);
@@ -179,4 +232,5 @@ public class MainActivity<v> extends AppCompatActivity {
         intent.putExtra("id", id);
         startActivity(intent);
     }
+
 }
